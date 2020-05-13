@@ -12,6 +12,7 @@ import {AngularFireModule } from '@angular/fire';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
+import { AuthGuard } from './auth.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCTmUh7vibosAOGKVKiqPYDYrepZqcIFWI",
@@ -42,7 +43,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   schemas:[NO_ERRORS_SCHEMA],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
