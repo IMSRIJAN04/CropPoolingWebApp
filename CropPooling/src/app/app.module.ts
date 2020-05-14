@@ -5,27 +5,34 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import {FormsModule} from '@angular/forms';
+
+//components
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
-import {AngularFireModule } from '@angular/fire';
 import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
-import { AuthGuard } from './auth.service';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyCTmUh7vibosAOGKVKiqPYDYrepZqcIFWI",
-  authDomain: "croppooling.firebaseapp.com",
-  databaseURL: "https://croppooling.firebaseio.com",
-  projectId: "croppooling",
-  storageBucket: "croppooling.appspot.com",
-  messagingSenderId: "1089438125123",
-  appId: "1:1089438125123:web:18a67ab5468aa0fd2bd8f6",
-  measurementId: "G-68CF3Z3CDZ"
-};
+// above are basic and necessary imports
+import { environment } from '../environments/environment';
+import * as routerAnimations from './router.animations';
+
+//now we will import firebase modules
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFireStorageModule} from '@angular/fire/storage'
+//the above are the firebase modules and angular/fire is the core package that provides firebase services
+
+
+
+import { AuthService } from './core/auth.service';
+
+
 
 @NgModule({
+
   declarations: [
     AppComponent,
     WelcomeComponent,
@@ -35,15 +42,20 @@ export const firebaseConfig = {
     SignupComponent,
     MembersComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
+
   schemas:[NO_ERRORS_SCHEMA],
-  providers: [AuthGuard],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

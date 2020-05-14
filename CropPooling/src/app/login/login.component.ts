@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn } from '../router.animations';
+import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,6 +10,7 @@ import { moveIn } from '../router.animations';
   animations: [moveIn()],
   host: {'[@moveIn]': ''}
 })
+@Injectable()
 export class LoginComponent implements OnInit {
 
   error: any;
