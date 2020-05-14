@@ -12,44 +12,46 @@
         </ul>
     </links>
 </mdb-navbar>
-<div class="displayTable">
-    <div class="displayTableCell">
+<div style="padding: 80px 500px 20px 500px;">
+<!-- Default form login -->
+<form class="text-center border border-light p-5">
+
+  <p class="h4 mb-4">Sign in</p>
+
+  <!-- Email -->
+  <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" #userName required>
   
-      <div class="authBlock">
-        <h3>Sign In</h3>
-        <div class="formGroup">
-          <input type="text" class="formControl" placeholder="Username" #userName required>
-        </div>
-  
-        <div class="formGroup">
-          <input type="password" class="formControl" placeholder="Password" #userPassword required>
-        </div>
-  
-        <!-- Calling SignIn Api from AuthService -->
-        <div class="formGroup">
-          <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-  
-        <div class="formGroup">
-          <span class="or"><span class="orInner">Or</span></span>
-        </div>
-  
-        <!-- Calling GoogleAuth Api from AuthService -->
-        <div class="formGroup">
-          <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
-            <i class="fab fa-google-plus-g"></i>
-            Log in with Google
-          </button>
-        </div>
-  
-        <!-- <div class="forgotPassword">
-          <span routerLink="/forgot-password">Forgot Password?</span>
-        </div>
-      </div>
-  
-      <div class="redirectToLogin"> -->
-        <span>Don't have an account?<span class="redirect" routerLink="/signup"> Sign Up</span></span>
-      </div>
-  
+  <!-- Password -->
+  <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" #userPassword required>
+
+
+  <div class="d-flex justify-content-around">
+    <div>
+      <!-- Forgot password -->
+      <a href="">Forgot password?</a>
     </div>
+
   </div>
+
+  <!-- Sign in button -->
+  <button mdbBtn color="info" block="true" class="my-4" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Sign in</button>
+  
+  <!-- Register -->
+  <p>Not a member?
+    <span class="redirect" routerLink="/signup">
+      <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Sign In</button>
+      <!-- <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Sign Up</button> -->
+    </span>
+    <!-- <a href="">Register</a> -->
+  </p>
+
+  <!-- Social login -->
+  <p>or sign in with:</p>
+  <button type="button" mdbBtn size="lg" mdbBtn color="danger" class="waves-light"  (click)="authService.GoogleAuth()" mdbWavesEffect>
+    <i class="fab fa-google-plus left"></i>Google+
+  </button>
+
+</form>
+<!-- Default form login -->
+</div>
+
