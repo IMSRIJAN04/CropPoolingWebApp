@@ -10,13 +10,11 @@ import {FormsModule} from '@angular/forms';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
-import { EmailComponent } from './email/email.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 
 // above are basic and necessary imports
 import { environment } from '../environments/environment';
-import * as routerAnimations from './router.animations';
 
 //now we will import firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -27,7 +25,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage'
 
 
 
-import { AuthService } from './core/auth.service';
+import { AuthService } from './core/services/auth.service';
 
 
 
@@ -38,7 +36,6 @@ import { AuthService } from './core/auth.service';
     WelcomeComponent,
     LoginComponent,
     AboutComponent,
-    EmailComponent,
     SignupComponent,
     MembersComponent
   ],
