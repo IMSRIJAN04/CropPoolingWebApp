@@ -16,7 +16,7 @@
 <!-- Default form login -->
 <form class="text-center border border-light p-5">
 
-  <p class="h4 mb-4">Sign in</p>
+  <p class="h4 mb-4">Sign In</p>
 
   <!-- Email -->
   <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" #userName required>
@@ -28,18 +28,20 @@
   <div class="d-flex justify-content-around">
     <div>
       <!-- Forgot password -->
-      <a href="">Forgot password?</a>
+      <a style="color:blue;">
+      <span routerLink="/forgotPassword">Forgot Password?</span>
+      </a>
     </div>
 
   </div>
 
   <!-- Sign in button -->
-  <button mdbBtn color="info" block="true" class="my-4" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Sign in</button>
+  <button mdbBtn color="info" block="true" class="my-4" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Sign In</button>
   
   <!-- Register -->
   <p>Not a member?
     <span class="redirect" routerLink="/signup">
-      <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Sign In</button>
+      <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Sign Up</button>
       <!-- <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Sign Up</button> -->
     </span>
     <!-- <a href="">Register</a> -->

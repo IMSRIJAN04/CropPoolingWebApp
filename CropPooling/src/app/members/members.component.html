@@ -1,56 +1,127 @@
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-  </a>
-</nav>
+<style>
 
-<!-- Sidebar navigation -->
-<div class="container-fluid">
-  <div class="row">
+  .full-height {
+    height: 100%;
+    min-height: 100vh;
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    
+  }
 
-    <nav class="col-md-2 d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active">
-              <i class="fas fa-user"></i>User Profile
-            </a>
-          </li>
-          <!-- Calling SignOut() Api from AuthService -->
-          <li class="nav-item">
-            <a class="nav-link" (click)="authService.SignOut()">
-              <i class="fas fa-sign-out-alt"></i>Log out
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  
+html,
+body,
+header,
+.view {
+  min-height: 100vh !important;
+}
 
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 100vh;
+  }
+}
 
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
+.top-nav-collapse {
+  background-color: #78909c !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #78909c !important;
+  }
+}
+
+h1 {
+  letter-spacing: 8px;
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+  </style>
+  
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/members">home</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto ">
+      <!-- <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="envelope"></mdb-icon> Contact<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
+      </li> -->
+
+      <!-- Dropdown -->
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <a routerLink='/profile' class="dropdown-item waves-light" mdbWavesEffect >My account</a>
+          <a class="dropdown-item waves-light" (click)="authService.SignOut()" mdbWavesEffect>Log out</a>
         </div>
-        <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                alt="{{user.displayName}}">
-              <div class="media-body">
-                <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
-              </div>
-            </div>
+      </li>
+
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->
+
+<!-- Main navigation -->
+<div class="full-height">
+   <!-- Full Page Intro -->
+  <div>
+    <!-- Mask & flexbox options-->
+    <div >
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-12 mb-4 white-text text-center">
+            <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+              data-wow-delay="0.3s" ><strong style="padding-top:200px;">Pool crops or Add vehicles</strong></h1>
+            <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+            <div style="padding-top:200px;">
+            <h5 class="text-uppercase mb-4 white-text wow fadeInDown " data-wow-delay="0.4s"><strong>You can either be a Truck Holder/Driver or Farmer</strong></h5>
+            <a mdbBtn color="white" outline="true" mdbWavesEffect class="wow fadeInDown" data-wow-delay="0.4s" routerLink="/driver">Rider</a>
+            <a mdbBtn color="white" outline="true" mdbWavesEffect class="wow fadeInDown" data-wow-delay="0.4s" routerLink='/farmer'>Farmer</a>
           </div>
+          </div>
+
+          <!--Grid column-->
         </div>
-
+        <!--Grid row-->
       </div>
-    </main>
-
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
   </div>
+  <!-- Full Page Intro -->
 </div>
+<!-- Main navigation -->

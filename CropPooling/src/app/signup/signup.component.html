@@ -1,3 +1,53 @@
+<mdb-navbar SideClass="navbar navbar-dark navbar-expand-lg blue animated fadeInDown ">
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+  <links>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link waves-light" mdbWavesEffect>Login<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="/about" class="nav-link waves-light" mdbWavesEffect>About</a>
+          </li>
+                
+      </ul>
+  </links>
+</mdb-navbar>
+
+<div style="padding: 80px 500px 20px 500px;">
+  <!-- Default form login -->
+  <form class="text-center border border-light p-5">
+  
+    <p class="h4 mb-4">Sign Up</p>
+  
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" #userName required>
+    
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" #userPassword required>
+  
+    <!-- Sign up button -->
+    <button mdbBtn color="info" block="true" class="my-4"  value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">Sign in</button>
+    
+    <!-- Register -->
+    <p>Already a member?
+      <span class="redirect" routerLink="/login">
+        <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Sign In</button>
+        <!-- <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Sign Up</button> -->
+      </span>
+      <!-- <a href="">Register</a> -->
+    </p>
+  
+    <!-- Social login -->
+    <p>or Continue with:</p>
+    <button type="button" mdbBtn size="lg" mdbBtn color="danger" class="waves-light"  (click)="authService.GoogleAuth()" mdbWavesEffect>
+      <i class="fab fa-google-plus left"></i>Google+
+    </button>
+  
+  </form>
+  <!-- Default form login -->
+  </div>
+
+
 <div class="displayTable">
   <div class="displayTableCell">
 
@@ -27,15 +77,6 @@
           Continue with Google
         </button>
       </div>
-    <!-- 
-
-      <div class="formGroup">
-        <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
-          <i class="fab fa-facebook"></i>
-          Continue with Facebook
-        </button>
-      </div>
-    </div> -->
 
     <div class="redirectToLogin">
       <span>Already have an account? <span class="redirect" routerLink="/login">Log In</span></span>

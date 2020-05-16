@@ -12,6 +12,10 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
+import { ForgotPassComponent } from './login/forgot-pass/forgot-pass.component';
+import { EmailVerificationComponent } from './login/email-verification/email-verification.component';
+import { DriverComponent } from './driver/driver.component';
+import { FarmerComponent } from './farmer/farmer.component';
 
 // above are basic and necessary imports
 import { environment } from '../environments/environment';
@@ -26,6 +30,8 @@ import {AngularFireStorageModule} from '@angular/fire/storage'
 
 
 import { AuthService } from './core/services/auth.service';
+import { UserprofileComponent } from './members/userprofile/userprofile.component';
+
 
 
 
@@ -37,7 +43,12 @@ import { AuthService } from './core/services/auth.service';
     LoginComponent,
     AboutComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    ForgotPassComponent,
+    EmailVerificationComponent,
+    DriverComponent,
+    FarmerComponent,
+    UserprofileComponent
   ],
 
   imports: [
