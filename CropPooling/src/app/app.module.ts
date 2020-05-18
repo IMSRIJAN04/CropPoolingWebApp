@@ -31,6 +31,9 @@ import {AngularFireStorageModule} from '@angular/fire/storage'
 
 import { AuthService } from './core/services/auth.service';
 import { UserprofileComponent } from './members/userprofile/userprofile.component';
+import { AddTruckComponent } from './driver/truck/add-truck/add-truck.component';
+import { EditTruckComponent } from './driver/truck/edit-truck/edit-truck.component';
+import { TruckListComponent } from './driver/truck/truck-list/truck-list.component';
 
 
 
@@ -48,7 +51,10 @@ import { UserprofileComponent } from './members/userprofile/userprofile.componen
     EmailVerificationComponent,
     DriverComponent,
     FarmerComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    AddTruckComponent,
+    EditTruckComponent,
+    TruckListComponent
   ],
 
   imports: [
