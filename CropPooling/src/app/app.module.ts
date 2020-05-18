@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import {FormsModule} from '@angular/forms';
+ 
 
 //components
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -16,9 +17,11 @@ import { ForgotPassComponent } from './login/forgot-pass/forgot-pass.component';
 import { EmailVerificationComponent } from './login/email-verification/email-verification.component';
 import { DriverComponent } from './driver/driver.component';
 import { FarmerComponent } from './farmer/farmer.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // above are basic and necessary imports
 import { environment } from '../environments/environment';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //now we will import firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -65,7 +68,10 @@ import { TruckListComponent } from './driver/truck/truck-list/truck-list.compone
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
 
   schemas:[NO_ERRORS_SCHEMA],
