@@ -14,6 +14,11 @@ import { DriverComponent } from './driver/driver.component';
 //importing authguard after creating it
 import { AuthGuard } from './core/guard/auth.guard';
 
+//importing truck compenents
+import { AddTruckComponent } from './driver/truck/add-truck/add-truck.component';
+import { TruckListComponent } from './driver/truck/truck-list/truck-list.component';
+import { EditTruckComponent } from './driver/truck/edit-truck/edit-truck.component';
+
 
 
 
@@ -25,6 +30,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'farmer',component:FarmerComponent},
   {path:'driver',component:DriverComponent},
+  {path:'register-truck',component:AddTruckComponent},
+  {path:'view-trucks',component:TruckListComponent},
+  {path:'edit-truck/:id',component:EditTruckComponent},
   {path:'members',component:MembersComponent,canActivate: [AuthGuard]},
   {path:'profile',component:UserprofileComponent},
   {path:'about',component:AboutComponent}

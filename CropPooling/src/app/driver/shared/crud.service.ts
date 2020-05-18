@@ -20,7 +20,9 @@ export class CrudService {
         truckId: truck.truckId,
         truckCapacity: truck.truckCapacity,
         truckLoad: truck.truckLoad,
-        truckType: truck.truckType
+        truckType: truck.truckType,
+        truckSrc: truck.truckSrc,
+        truckDes: truck.truckDes
      
       })
     }
@@ -44,7 +46,9 @@ export class CrudService {
         truckId: truck.truckId,
         truckCapacity: truck.truckCapacity,
         truckLoad: truck.truckLoad,
-        truckType: truck.truckType
+        truckType: truck.truckType,
+        truckSrc: truck.truckSrc,
+        truckDes: truck.truckDes
       })
     }  
   
