@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import {FormsModule} from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
  
 
 //components
@@ -71,7 +72,8 @@ import { TruckListComponent } from './driver/truck/truck-list/truck-list.compone
     AngularFireStorageModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
 
   schemas:[NO_ERRORS_SCHEMA],

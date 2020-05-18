@@ -1,1 +1,65 @@
-<p>truck-list works!</p>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Trucks List</h1>
+    <!-- It won't show if there is no student data -->
+    <a routerLink="/register-truck" class="btn btn-success" *ngIf="hideWhenNoTruck">
+      <i class="fas fa-plus custom-fa-plus"></i>
+      Add Truck
+    </a>
+  </div>
+  
+  <div class="pricing-header mx-auto">
+  
+    <!-- Preloader shows before the data loads-->
+    <div class="no-data text-center" *ngIf="preLoader">
+      <img src="assets/preloader.gif" class="preloader-icon" alt="No truck">
+    </div>
+  
+    <!-- No data shows when their is no student data available -->
+    <div class="no-data text-center" *ngIf="noData">
+      <img src="assets/no-student.svg" class="nodata-msg" alt="No student">
+      <p class="nodata-msg">No truck added yet!</p>
+      <a routerLink="/register-truck" class="btn btn-success">
+        <i class="fas fa-plus custom-fa-plus"></i>
+        Add Truck
+      </a>
+    </div>
+  
+    <!-- Showing students data -->
+    <div class="table-responsive" *ngIf="hideWhenNoTruck">
+      <table class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Truck name</th>
+            <th scope="col">Truck Id</th>
+            <th scope="col">Truck Type</th>
+            <th scope="col">Truck Capacity</th>
+            <th scope="col">Truck Load</th>
+            <th scope="col">Truck Source</th>
+            <th scope="col">Truck Destination</th>
+            <th class="text-center" scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- *ngFor loop iterates over Student array and fetch the student's data -->
+          <!-- paginate pipe will add pagination in student's list, it won't show if items are less then 7 -->
+          <tr *ngFor="let truck of Truck | paginate: { itemsPerPage: 7, currentPage: p }; let i = index;">
+            <th scope="row">{{truck.$key}}</th>
+            <td>{{truck.truckName}}</td>
+            <td>{{truck.truckId}}</td>
+            <td>{{truck.truckType}}</td>
+            <td>{{truck.truckCapacity}}</td>
+            <td>{{truck.truckLoad}}</td>
+            <td>{{truck.truckSrc}}</td>
+            <td>{{truck.truckDes}}</td>
+            <td class="text-center action-block">
+              <!-- routerLink="/edit-student/{{student.$key}}" is refered to { path: 'edit-student/:id', component: EditStudentComponent } in app-routing.moudles.ts -->
+              <i class="far fa-edit" routerLink="/edit-truck/{{truck.$key}}"></i>
+              <i class="far fa-trash-alt" (click)="deleteTruck(truck)"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Pagination -->
+    <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+  </div>
