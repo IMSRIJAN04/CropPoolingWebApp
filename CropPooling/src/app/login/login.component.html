@@ -1,5 +1,5 @@
 <body style="background: url(https://fleetwatch.co.za/e-mag/fw/issue39/files/assets/background/background.jpg); background-size: 100% 100%;">
-<mdb-navbar SideClass="navbar navbar-dark navbar-expand-lg blue animated fadeInDown ">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
     <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
     <links>
           <ul class="navbar-nav mr-auto">
@@ -13,11 +13,12 @@
         </ul>
     </links>
 </mdb-navbar>
-<div style="padding: 80px 500px 20px 500px;">
-<!-- Default form login -->
-<form class="text-center border border-light p-5">
 
-  <p class="h4 mb-4">Sign In</p>
+<div style="padding: 80px 100px 20px 1000px;">
+<!-- Default form login -->
+<form class="mask rgba-gradient text-center border border-light text-white p-5">
+
+  <p class="h4 mb-4 text-white">Sign In</p>
 
   <!-- Email -->
   <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" #userName required>
@@ -29,7 +30,7 @@
   <div class="d-flex justify-content-around">
     <div>
       <!-- Forgot password -->
-      <a style="color:blue;">
+      <a style="color:whitesmoke;">
       <span routerLink="/forgotPassword">Forgot Password?</span>
       </a>
     </div>
@@ -40,7 +41,7 @@
   <button mdbBtn color="info" block="true" class="my-4" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">Sign In</button>
   
   <!-- Register -->
-  <p>Not a member?
+  <p style="color: white;">Not a member?
     <span class="redirect" routerLink="/signup">
       <button mdbBtn type="button" gradient="blue" rounded="true" mdbWavesEffect>Sign Up</button>
       <!-- <button mdbBtn type="button" color="success" rounded="true" mdbWavesEffect>Sign Up</button> -->
@@ -49,7 +50,7 @@
   </p>
 
   <!-- Social login -->
-  <p>or sign in with:</p>
+  <p style="color: white;">or sign in with:</p>
   <button type="button" mdbBtn size="lg" mdbBtn color="danger" class="waves-light"  (click)="authService.GoogleAuth()" mdbWavesEffect>
     <i class="fab fa-google-plus left"></i>Google+
   </button>
