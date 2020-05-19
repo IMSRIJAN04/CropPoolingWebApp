@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { CrudService } from 'src/app/driver/shared/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
-
+import {AuthService } from 'src/app/core/services/auth.service';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-add-truck',
   templateUrl: './add-truck.component.html',
@@ -14,6 +15,9 @@ export class AddTruckComponent implements OnInit {
   public truckForm: FormGroup;  // Define FormGroup to truck's form
  
   constructor(
+    public authService: AuthService,
+    public router: Router,
+    public ngZone: NgZone,
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms
     public toastr: ToastrService  // Toastr service for alert message

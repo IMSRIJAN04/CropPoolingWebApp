@@ -1,10 +1,47 @@
-<div class="pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Add truck</h1>
-    <p class="custom-text">A demo CRUD app for <strong>truck record management system</strong> built with <strong>Angular7
-        and Firebase5</strong></p>
-  </div>
-  
+<header>
+  <!--Navbar-->
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo ">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand waves-light" mdbWavesEffect routerLink='/members'><strong>Home</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink='/register-truck'>Add-Truck <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink='/view-trucks'>View Trucks</a>
+        </li>
+        <!-- <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" href="#">Profile</a>
+        </li> -->
+      </ul>
+      <form class="form-inline">
+        <div class="md-form my-0">
+          <ul class="navbar-nav ml-auto ">
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                <mdb-icon fas icon="user"></mdb-icon> Profile<span class="caret"></span></a>
+              <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+                <a routerLink='/profile' class="dropdown-item waves-light" mdbWavesEffect >My account</a>
+                <a class="dropdown-item waves-light" (click)="authService.SignOut()" mdbWavesEffect>Log out</a>
+              </div>
+            </li>
+      
+          </ul>
+        </div>
+      </form>
+    </links>
+  </mdb-navbar>
   <!-- truck form -->
+
+
+  <!-- Main navigation -->
+  
+
+
   <form [formGroup]="truckForm" (ngSubmit)="submittruckData()" novalidate>
     <div class="row">
       <div class="col-lg-5 col-md-12 col-sm-12">
@@ -75,3 +112,7 @@
         </div>
     </div>
   </form><!-- truck form ends-->
+
+
+
+
