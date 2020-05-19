@@ -29,7 +29,7 @@ export class CrudService {
   
     // Fetch Single Truck Object
     GetTruck(id: string) {
-      this.truckRef = this.db.object('truck-list/' + id);
+      this.truckRef = this.db.object('trucks-list/' + id);
       return this.truckRef;
     }
   

@@ -1,4 +1,7 @@
 <style>
+  .navbar-inner {
+    background:transparent;
+}
 
   .full-height {
     height: 100%;
@@ -57,7 +60,7 @@ h5 {
   </style>
   
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo" [containerInside]="false">
+<mdb-navbar SideClass="navbar navbar-inner navbar-expand-lg navbar-dark indigo " [containerInside]="false">
 
   <!-- Navbar brand -->
   <mdb-navbar-brand><a class="navbar-brand" routerLink="/members">home</a></mdb-navbar-brand>
